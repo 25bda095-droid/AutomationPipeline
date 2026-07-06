@@ -177,10 +177,17 @@ On top of the fused RRF base score, `clip_matcher.py` applies intent-classified 
 
 ```text
 ├── 📁 config/                              # YAML configuration (models, API endpoints, thresholds, show config)
+├── 📁 How To Use This Project/             # 📚 Master documentation and step-by-step guides (START HERE!)
+│   ├── FullInstructions.md                 # End-to-end master guide for the entire pipeline
+│   ├── 01_Pipeline1_Clip_Indexer.py        # Shortcut script: Master clip generation
+│   ├── 02_Pipeline2_Process_Queue.py       # Shortcut script: Manual queue rendering
+│   ├── 03_Pipeline2_Auto_Orchestrator.py   # Shortcut script: Fully autonomous rendering
+│   ├── 📁 Creating Dataset/                # Guide & scripts for YOLO frame extraction, clustering, and training
+│   ├── 📁 Subtitle_Scrapper/               # Guide & scripts for batch downloading .srt files
+│   └── 📁 Web_Scrapping/                   # Guide & scripts for scraping fandom wikis into RAG topics
 ├── 📁 notebooks/                           # GPU Colab notebooks for cloud-offloaded voice synthesis
 ├── 📁 prompts/                             # System prompts for Topic Miner, Script Verifier, RAG agents
-├── 📁 scripts/                             # Core modular execution engine
-│   │
+├── 📁 scripts/                             # Core modular execution engine (backend logic)
 │   │  ── Clip Indexing Pipeline ──
 │   ├── scene_splitter.py                   # Visual scene boundary detection via histogram shifts
 │   ├── rebuild_clip_index.py               # Skeleton index builder — scans ALL mp4s, including silent clips
@@ -192,10 +199,6 @@ On top of the fused RRF base score, `clip_matcher.py` applies intent-classified 
 │   ├── clip_indexer_subtitles.py           # Subtitle alignment and timestamp extraction
 │   ├── enrich_clip_characters.py           # Dialogue alias matching + semantic re-embedding
 │   ├── enrich_clip_metadata.py             # Fast metadata pass: speaker label cleanup, transformation detection
-│   │
-│   │  ── Model Training ──
-│   ├── YOLO_finetuning_noBoundingBox.py    # YOLOv8 classification fine-tuning (no bbox annotations)
-│   ├── arcface_metric_train.py             # ArcFace metric learning on frozen CLIP ViT-B-32
 │   │
 │   │  ── Knowledge Base ──
 │   ├── scrape_fandom.py                    # Scrapling spider — crawls entire Ben 10 Fandom wiki
@@ -215,7 +218,13 @@ On top of the fused RRF base score, `clip_matcher.py` applies intent-classified 
 │   ├── thumbnail_generator.py              # CV frame ranker + thumbnail renderer
 │   └── publisher.py                        # YouTube Data API v3 OAuth upload controller
 ├── 📁 vector_db/                           # Persistent ChromaDB vector collections
-└── README.md
+├── 📁 topics/                              # Scraped RAG JSON data (wiki.json, theories.json)
+├── 📁 clips/                               # Output directory for Phase 1 (thousands of cropped MP4 scenes)
+├── 📁 output/                              # Output directory for Phase 2 (final rendered YouTube Shorts)
+├── 📁 Videos/                              # Input directory for raw source episodes
+├── 📁 yolo_wt/                             # Pre-trained YOLOv8 weights for character detection
+├── 📁 YOLO_Final_Dataset/                  # Auto-generated dataset for YOLO fine-tuning (images/labels)
+└── 📁 final_model/                         # Exported fine-tuned weights (best.pt)
 ```
 
 ---

@@ -188,8 +188,8 @@ python scripts/scrape_fandom.py --url https://ben10.fandom.com/api.php \
 python scripts/scrape_fandom.py --url https://ben10.fandom.com/api.php --scrape-all
 ```
 
-> [!WARNING]
-> The `--scrape-all` flag on large wikis (e.g., One Piece with 15,000+ pages) can take **several hours**. The script auto-saves every 50 pages, so you can safely interrupt and resume later.
+> [!TIP]
+> **Blazing Fast:** The `--scrape-all` flag is super fast! Even for massive wikis, it typically only takes about **10–15 minutes** to scrape around **8,000 pages**. The script still auto-saves every 50 pages just in case, so you can safely interrupt and resume if needed.
 
 ### 🧠 Smart Theory Detection
 
@@ -213,7 +213,7 @@ Content under these headers goes into `theories.json`. Everything else goes into
 Both scrapers produce the same two output files. The pipeline expects them at these **exact locations**:
 
 ```
-AutomationPipeline-main/
+AutomationPipeline/
 ├── topics/
 │   ├── wiki.json           ← All character lore, episode info, canonical facts
 │   └── theories.json       ← Fan theories, trivia, Easter eggs, behind-the-scenes
