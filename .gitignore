@@ -26,7 +26,6 @@ assets/clips/
 Videos/
 research_cache/
 graphify-out/
-yolo_wt/
 rick_and_morty_subtitles/
 ben10_subtitles/
 subliminal_cache.*
@@ -41,8 +40,6 @@ test_outputs/
 runs/
 weights/
 sidework/
-*.pt
-*.npz
 *.json
 
 # Dataset Generation & Side-project Scripts (Do not commit to main pipeline)
